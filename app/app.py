@@ -3,6 +3,7 @@ import PyPDF2
 
 app = Flask(__name__)
 
+
 def extract_text_from_pdf(file_path):
     with open(file_path, 'rb') as file:
         pdf_reader = PyPDF2.PdfFileReader(file)
@@ -10,6 +11,7 @@ def extract_text_from_pdf(file_path):
         for page_num in range(pdf_reader.numPages):
             text += pdf_reader.getPage(page_num).extractText()
         return text
+
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -21,6 +23,7 @@ def upload_file():
             extracted_text = extract_text_from_pdf(file_path)
             return render_template('result.html', text=extracted_text)
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
