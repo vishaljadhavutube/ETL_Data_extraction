@@ -5,3 +5,6 @@
 
 #virutal envrionment files
 venv
+
+#ignore files under the upload files
+uploads/
