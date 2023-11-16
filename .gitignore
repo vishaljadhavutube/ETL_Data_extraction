@@ -1,4 +1,10 @@
 # ide filesss
 .idea
+.DS_Store/
 
-s
+
+#virutal envrionment files
+venv
+
+#ignore files under the upload files
+uploads/
